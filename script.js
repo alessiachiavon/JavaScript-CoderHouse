@@ -16,8 +16,8 @@ do{
         medioDePago = prompt("Como desea abonar? \n 1-Efectivo \n 2-Débito/Transferencia \n 3-Tarjeta de crédito")
     } while((medioDePago != "1") && (medioDePago != "2") && (medioDePago != "3"))
     if(medioDePago == "1"){
-        precio = precio*0.9;
-        final = prompt(`El precio total de tu producto es: \$${precio} \n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+        efectivo = precio*0.9;
+        final = prompt(`El precio total de tu producto es: \$${efectivo} \n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
     }
     else  if(medioDePago == "2"){
         final = prompt(`El precio total de tu producto es: \$${precio} \n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
@@ -27,20 +27,24 @@ do{
             cuotas = prompt("En cuantas cuotas desea abonar? \n 1- 3 \n 2- 6 \n 3- 12 \n 4 -24")}
         while((cuotas != "1") && (cuotas != "2") && (cuotas != "3") && (cuotas != "4"))
         if(cuotas == "1"){
-
-            final = prompt(`El precio total de tu producto es: \$${recargo(precio, 1.12)} en 3 cuotas de: \$${precioCuota(precio, 1.12, 3)}\n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+            do {
+                final = prompt(`El precio total de tu producto es: \$${recargo(precio, 1.12)} en 3 cuotas de: \$${precioCuota(precio, 1.12, 3).toFixed(2)}\n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+            } while((final != "1") && (final != "2"))  
         }
         else if(cuotas == "2"){
-
-            final = prompt(`El precio total de tu producto es: \$${recargo(precio, 1.19)} en 6 cuotas de: \$${precioCuota(precio, 1.19, 6)}\n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+            do {
+                final = prompt(`El precio total de tu producto es: \$${recargo(precio, 1.19)} en 6 cuotas de: \$${precioCuota(precio, 1.19, 6).toFixed(2)}\n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+            } while((final != "1") && (final != "2"))  
         }
         else if(cuotas == "3"){
-
-            final = prompt(`El precio total de tu producto es: \$${recargo(precio, 1.3)} en 12 cuotas de: \$${precioCuota(precio, 1.3, 12)}\n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+            do {
+                final = prompt(`El precio total de tu producto es: \$${recargo(precio, 1.3)} en 12 cuotas de: \$${precioCuota(precio, 1.3, 12).toFixed(2)}\n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+            } while((final != "1") && (final != "2"))  
         }
         else if(cuotas == "4"){
-
-            final = prompt(`El precio total de tu producto es: \$${recargo(precio, 1.6)} en 24 cuotas de: \$${precioCuota(precio, 1.6, 24)}\n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+            do {
+                final = prompt(`El precio total de tu producto es: \$${recargo(precio, 1.6)} en 24 cuotas de: \$ ${precioCuota(precio, 1.6, 24).toFixed(2)} \n Desea: \n 1- Finalizar compra \n 2- Volver atrás`)
+            } while((final != "1") && (final != "2"))  
         }
     }
     
