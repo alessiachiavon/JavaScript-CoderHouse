@@ -83,5 +83,3 @@ else if(medioDePago == "3"){
 } while(final != "1")
 
 alert("Gracias por su compra!")
-
-
